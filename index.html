@@ -1,78 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="UTF-8">
+  <!-- 行動裝置支援 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- 行動裝置支援 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI 計算機</title>
 
-    <title>Bootstrap Table</title>
+  <link rel="stylesheet" href="../library/css/bootstrap.css">
+  <script src="../library/js/jquery-2.2.4.js"></script>
+  <script src="../library/js/bootstrap.js"></script>
 
-    <!-- Bootstrap -->
-    <link href="library/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  .my-container{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .box{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px
+  }
+   .button-box{
+     padding-left: 40px;
+     padding-top: 44.5px;
+   }
+  </style>
 
-  </head>
-  <body>
+  <script>
+  $(function(){
+    $('#calc').click(function(){
+      var h = $('#height').val(),w = $('#weight').val();
 
-    <div class="container">
+      if(h == ''){alert('請輸入身高');}
+      else if(w == ''){alert('請輸入體重');}
+      else if(h>3){
+        alert('身高請輸入公尺')
+      }
+      else{
+        bmi = w/(h*h)
+        $('#result').val(formatFloat(bmi,3));
+        $('#height').val('');
+        $('#weight').val('');
+      }
 
-        <h1>Foobar Express 車次表</h1>
+    });
+  });
 
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>出發地</th>
-                    <th>目的地</th>
-                    <th>出發</th>
-                    <th>抵達</th>
-                    <th>票價</th>
-                </tr>
-            </thead>
-            <tbody>
+  function formatFloat(num, pos)
+  {
+    var size = Math.pow(10, pos);
+    return Math.round(num*size)/size;
+  }
+  </script>
 
-                <!-- 第一列 -->
-                <tr>
-                    <td>FBE 353</td>
-                    <td>Foo Hbf</td>
-                    <td>Bar Hbf</td>
-                    <td>08:49</td>
-                    <td>10:22</td>
-                    <td>
-                        <button class="btn btn-danger btn-xs">經濟艙 19</button>
-                        <button class="btn btn-primary btn-xs">商務艙 39</button>
-                    </td>
-                </tr>
+</head>
 
-                <!-- 第二列 -->
-                <tr>
-                    <td>FBE 983</td>
-                    <td>Foobar Hbf</td>
-                    <td>Barcode Hbf</td>
-                    <td>10:21</td>
-                    <td>13:45</td>
-                    <td>
-                        <button class="btn btn-danger btn-xs">經濟艙 39</button>
-                        <button class="btn btn-primary btn-xs">商務艙 69</button>
-                    </td>
-                </tr>
 
-                <!-- 第三列 -->
-                <tr>
-                    <td>FBE 125</td>
-                    <td>Bar Hbf</td>
-                    <td>Foo Hbf</td>
-                    <td>17:49</td>
-                    <td>21:22</td>
-                    <td>
-                        <button class="btn btn-danger btn-xs">經濟艙 29</button>
-                        <button class="btn btn-primary btn-xs">商務艙 49</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 
-  </body>
+
+<body>
+  <div class="container-fluid my-container">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">BMI 計算機</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://hahow.in" target="_blank">About</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="row">
+          <div class="col-md-4 box">
+            <div class="form-group">
+              <label for="height">輸入身高(m)</label>
+              <input type="number" class="form-control" id="height" placeholder="身高">
+            </div>
+          </div>
+
+          <div class="col-md-4 box">
+            <div class="form-group">
+              <label for="exampleInputEmail1">輸入體重(kg)</label>
+              <input type="number" class="form-control" id="weight" placeholder="體重">
+            </div>
+          </div>
+
+          <div class="col-md-1 button-box">
+            <div class="form-group">
+              <button type="button" class="btn btn-default" id="calc">計算</button>
+            </div>
+          </div>
+
+          <div class="col-md-3 box">
+            <div class="form-group">
+              <label>您的BMI</label>
+              <input type="number" class="form-control" id="result" readonly="true">
+            </div>
+
+          </div>
+
+        </div>
+  </div>
+</body>
+
+
 </html>
