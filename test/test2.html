@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- ��ʸ˸m�䴩 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap Table2</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="library/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <div class="container">
+
+        <h1>Foobar Express 車次表2</h1>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>出發地</th>
+                    <th>目的地</th>
+                    <th>出發</th>
+                    <th>抵達</th>
+                    <th>票價</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- �Ĥ@�C -->
+                <tr>
+                    <td>FBE 652</td>
+                    <td>Bar Hbf</td>
+                    <td>Barcode Hbf</td>
+                    <td>02:15</td>
+                    <td>03:56</td>
+                    <td>
+                        <button class="btn btn-danger btn-xs">經濟艙 19</button>
+                        <button class="btn btn-primary btn-xs">商務艙 39</button>
+                    </td>
+                </tr>
+
+
+
+                <!-- �ĤT�C -->
+                <tr>
+                    <td>FBE 651</td>
+                    <td>Bar Hbf</td>
+                    <td>Foo Hbf</td>
+                    <td>11:01</td>
+                    <td>11:54</td>
+                    <td>
+                        <button class="btn btn-danger btn-xs">經濟艙 29</button>
+                        <button class="btn btn-primary btn-xs">商務艙 49</button>
+                    </td>
+                </tr>
+                <!-- �ĤG�C -->
+                <tr>
+                    <td>FBE 184</td>
+                    <td>Foobar Hbf</td>
+                    <td>Barcode Hbf</td>
+                    <td>12:05</td>
+                    <td>13:45</td>
+                    <td>
+                        <button class="btn btn-danger btn-xs">經濟艙 39</button>
+                        <button class="btn btn-primary btn-xs">商務艙 69</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+  </body>
