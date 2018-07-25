@@ -21,7 +21,7 @@
 
     <div class="container">
 
-        <h1>Foobar Express 車次表</h1>
+        <h1>Foobar Express 車次表</h1><h4 id="yudan_clock"></h4>
 
         <table class="table table-hover table-bordered">
             <thead>
@@ -78,5 +78,22 @@
             </tbody>
         </table>
     </div>
+    <script type="text/javascript">
+        // document.write("<span id=\"yudan_clock\"><\/span>");
+        var now, hours, minutes, seconds, timeValue;
+        function yudan_time() {
+            now = new Date();
+            hours = now.getHours();
+            minutes = now.getMinutes();
+            seconds = now.getSeconds();
+            timeValue = (hours >= 12) ? "下午 " : "上午 ";
+            timeValue += ((hours > 12) ? hours - 12 : hours) + " 時";
+            timeValue += ((minutes < 10) ? " 0" : " ") + minutes + " 分";
+            timeValue += ((seconds < 10) ? " 0" : " ") + seconds + " 秒";
+            document.getElementById("yudan_clock").innerHTML = timeValue;
+            setTimeout("yudan_time()", 100);
+        }
+        yudan_time();
+    </script>
 
   </body>
